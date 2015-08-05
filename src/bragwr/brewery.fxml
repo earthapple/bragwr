@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bragwr.Bragwr">
+   <center>
+      <LineChart fx:id="tempChart" onMousePressed="#actionPerformed" title="Temperature" BorderPane.alignment="CENTER">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="mltLbl" text="MLT" GridPane.rowIndex="1" />
+            <Label fx:id="hltLbl" text="HLT" GridPane.rowIndex="2" />
+            <Label fx:id="bkLbl" text="BK" GridPane.rowIndex="3" />
+            <TextField fx:id="mltTargetText" onAction="#actionPerformed" text="60" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="hltTargetText" onAction="#actionPerformed" text="60" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="bkTargetText" onAction="#actionPerformed" text="60" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin></TextField>
+            <Label fx:id="mltTempLbl" text="60" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="hltTempLbl" text="60" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="bkTempLbl" text="60" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Kettle" />
+            <Label text="Current Temp" GridPane.columnIndex="1" />
+            <Label text="Target Temp" GridPane.columnIndex="2" />
+            <RadioButton fx:id="mltStatusLbl" contentDisplay="CENTER" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding></RadioButton>
+            <Label text="Element Status" GridPane.columnIndex="3" />
+            <RadioButton fx:id="hltStatusLbl" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
+             <padding>
+                 <Insets left="10.0" right="10.0" />
+             </padding></RadioButton>
+            <RadioButton fx:id="bkStatusLbl" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
+             <padding>
+                 <Insets left="10.0" right="10.0" />
+             </padding></RadioButton>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </GridPane>
+   </bottom>
+</BorderPane>
